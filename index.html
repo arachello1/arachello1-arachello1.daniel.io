@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High-Quality Animation</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #121212; /* Dark background for contrast */
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    #godzilla-text {
+      font-size: 6em;
+      font-family: 'Arial Black', sans-serif;
+      letter-spacing: 0.1em;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: inline-block;
+      color: #00ff00; /* Initial green color */
+      text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6);
+      transform-style: preserve-3d;
+      animation: bounce 2s ease infinite, colorChange 6s linear infinite, rotate 10s linear infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes colorChange {
+      0% { color: #00ff00; text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6); } /* Green */
+      25% { color: #ff0000; text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); } /* Red */
+      50% { color: #0000ff; text-shadow: 0 0 20px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6); } /* Blue */
+      75% { color: #ff00ff; text-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6); } /* Magenta */
+      100% { color: #00ff00; text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6); } /* Green */
+    }
+
+    @keyframes rotate {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="godzilla-text">daniel gay</h1>
+  </div>
+
+  <script>
+    // Optional: Additional JavaScript for interactive behavior
+    document.getElementById('godzilla-text').addEventListener('mouseover', function() {
+      this.style.transform = 'scale(1.2) rotateY(0deg)';
+    });
+
+    document.getElementById('godzilla-text').addEventListener('mouseout', function() {
+      this.style.transform = 'scale(1) rotateY(0deg)';
+    });
+  </script>
+</body>
+</html>
